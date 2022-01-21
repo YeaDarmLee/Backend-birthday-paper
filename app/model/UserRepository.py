@@ -18,7 +18,7 @@ class UserRepository(UserMixin):
     print('== user_info findUserByEmail ==')
     try:
       db_class = Database()
-      sql = "SELECT * FROM user_info WHERE USER_EMAIL = '" + str(userEmail) + "'"
+      sql = "SELECT * FROM bp_user_info WHERE USER_EMAIL = '" + str(userEmail) + "'"
       user = db_class.executeOne(sql)
       return dict(user)
     except Exception as e:
@@ -29,7 +29,7 @@ class UserRepository(UserMixin):
     print('== user_info findUserByIdx ==')
     try:
       db_class = Database()
-      sql = "SELECT * FROM user_info WHERE IDX = '" + str(userIdx) + "'"
+      sql = "SELECT * FROM bp_user_info WHERE IDX = '" + str(userIdx) + "'"
       user = db_class.executeOne(sql)
       return dict(user)
     except Exception as e:
@@ -40,7 +40,7 @@ class UserRepository(UserMixin):
     print('== user_info create ==')
     try:
       db_class = Database()
-      sql = "INSERT INTO user_info (USER_EMAIL, USER_PW, NICKNAME, BIRTH, USER_PROFILE) VALUES ('%s', '%s', '%s', '%s', '%s')" % (
+      sql = "INSERT INTO bp_user_info (USER_EMAIL, USER_PW, NICKNAME, BIRTH, USER_PROFILE) VALUES ('%s', '%s', '%s', '%s', '%s')" % (
         str(userEmail), str(userPw), str(nickName), str(birth), str(profileImg))
       db_class.execute(sql)
       db_class.commit()

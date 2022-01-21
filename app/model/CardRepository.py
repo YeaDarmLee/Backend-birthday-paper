@@ -15,7 +15,7 @@ class CardRepository(UserMixin):
     print('== card_data findCardByReceiverIdx ==')
     try:
       db_class = Database()
-      sql = "SELECT * FROM card_data WHERE RECEIVER_IDX = '" + str(userIdx) + "'"
+      sql = "SELECT * FROM bp_card_data WHERE RECEIVER_IDX = '" + str(userIdx) + "'"
       cardList = db_class.executeAll(sql)
       return cardList
     except Exception as e:
@@ -26,7 +26,7 @@ class CardRepository(UserMixin):
     print('== card_data create ==')
     try:
       db_class = Database()
-      sql = "INSERT INTO card_data (SENDER_NM, RECEIVER_NM, RECEIVER_IDX, CARD_MSG) VALUES ('%s', '%s', '%s', '%s')" % (
+      sql = "INSERT INTO bp_card_data (SENDER_NM, RECEIVER_NM, RECEIVER_IDX, CARD_MSG) VALUES ('%s', '%s', '%s', '%s')" % (
         str(sender_nm), str(receiver_nm), str(receiver_idx), str(card_msg))
       db_class.execute(sql)
       db_class.commit()
