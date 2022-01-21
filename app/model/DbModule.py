@@ -8,7 +8,7 @@ class Database():
       port=3306,
       user='public0917',
       passwd='public2423!',
-      db='public0917',
+      db='dbpublic0917',
       charset='utf8mb4'
     )
     self.cursor = self.db.cursor(pymysql.cursors.DictCursor)
