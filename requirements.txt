@@ -6,3 +6,4 @@ blueprint==3.4.2
 jsonify==0.5
 requests==2.26.0
 PyJWT==2.3.0
+gunicorn
