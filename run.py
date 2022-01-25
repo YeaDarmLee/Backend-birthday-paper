@@ -9,5 +9,5 @@ if not app.debug:   # debug=False 모드 일 때 Product Mode 전환 후 로그 
     app.logger.addHandler(file_handler)
     
 if __name__ == "__main__":
-    app.run(host = "0.0.0.0", port = 8080, debug=True)
+    app.run(host = "0.0.0.0", port = 5000, debug=True)
     
